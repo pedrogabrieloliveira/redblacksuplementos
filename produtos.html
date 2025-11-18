@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Produtos • RedBlack</title>
+    <link rel="stylesheet" href="css/produtos.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">RED<span>BLACK</span></div>
+
+        <nav class="nav">
+            <a href="index.html">Início</a>
+            <a href="produtos.html" class="active">Produtos</a>
+            <a href="carrinho.html">Carrinho</a>
+            <a href="login.html">Entrar</a>
+        </nav>
+    </header>
+
+    <div class="layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <h2 class="side-title">Filtros</h2>
+
+            <label class="side-label">Buscar</label>
+<input type="text" id="buscar" class="side-input" placeholder="Buscar produto..." />
+
+<label class="side-label">Categoria</label>
+<select id="filtro-categoria" class="side-input">
+    <option value="todos">Todas</option>
+    <option value="whey">Whey Protein</option>
+    <option value="creatina">Creatina</option>
+    <option value="pretreino">Pré-treino</option>
+    <option value="bcaa">BCAA</option>
+    <option value="glutamina">Glutamina</option>
+    <option value="termogenico">Termogênicos</option>
+    <option value="multivitaminas">Multivitamínicos</option>
+    <option value="snacks">Snacks</option>
+    <option value="omega">Ômega 3</option>
+    <option value="hipercaloricos">Hipercalóricos</option>
+    <option value="veganos">Veganos</option>
+</select>
+
+
+            <label class="side-label">Ordenar por</label>
+            <select id="ordenar" class="side-input">
+                <option value="padrao">Padrão</option>
+                <option value="menor">Menor preço</option>
+                <option value="maior">Maior preço</option>
+                <option value="az">A → Z</option>
+                <option value="za">Z → A</option>
+            </select>
+        </aside>
+
+        <!-- PRODUTOS -->
+        <main class="main-content">
+            <h1 class="page-title">Produtos</h1>
+            <p class="page-subtitle">Veja todos os nossos suplementos.</p>
+
+            <div id="listaProdutos" class="produtos-grid" aria-live="polite">
+                <!-- Produtos gerados via JS -->
+            </div>
+        </main>
+
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="js/produtos.js"></script>
+    <script src="js/filtros.js"></script>
+    <script src="js/carrinho.js"></script>
+</body>
+</html>

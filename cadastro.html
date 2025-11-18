@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Conta • RedBlack</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cadastro.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">RED<span>BLACK</span></div>
+
+    <nav class="nav">
+        <a href="index.html">Início</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="carrinho.html">Carrinho</a>
+        <a href="login.html">Entrar</a>
+    </nav>
+</header>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <h2 class="side-title">Navegação</h2>
+
+        <a class="side-link" href="index.html">🏠 Início</a>
+        <a class="side-link" href="produtos.html">🛒 Produtos</a>
+        <a class="side-link" href="carrinho.html">🧾 Carrinho</a>
+        <a class="side-link" href="sobre.html">ℹ Sobre</a>
+        <a class="side-link" href="contato.html">✉ Contato</a>
+    </aside>
+
+    <main class="main-content">
+
+        <h1 class="page-title">Criar Conta</h1>
+        <p class="page-subtitle">Cadastre-se para usar todos os recursos da RedBlack.</p>
+
+        <!-- MENSAGENS -->
+        <div id="msgErro" class="alerta" style="display:none;">
+            Este e-mail já está cadastrado!
+        </div>
+
+        <div id="msgOk" class="sucesso" style="display:none;">
+            Conta criada com sucesso! Você já pode fazer login.
+        </div>
+
+        <div class="cadastro-box">
+
+            <!-- CORRIGIDO: envia para auth_cadastrar.php -->
+            <form id="formCadastro" action="php/auth_cadastrar.php" method="POST">
+
+                <label>Nome completo</label>
+                <input type="text" name="nome" placeholder="Seu nome" required>
+
+                <label>Email</label>
+                <input type="email" name="email" placeholder="seuemail@gmail.com" required>
+
+                <label>Senha</label>
+                <input type="password" name="senha" id="senha1" placeholder="Crie uma senha" required>
+
+                <label>Confirmar senha</label>
+                <input type="password" id="senha2" placeholder="Repita sua senha" required>
+
+                <button type="submit" class="cadastro-btn">Criar Conta</button>
+
+                <p class="cadastro-alt">
+                    Já tem conta? <a href="login.html">Entrar</a>
+                </p>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script>
+// MOSTRA MENSAGENS DO PHP
+const p = new URLSearchParams(location.search);
+
+if (p.get("erro") === "email") {
+    document.getElementById("msgErro").style.display = "block";
+}
+if (p.get("sucesso") === "1") {
+    document.getElementById("msgOk").style.display = "block";
+}
+
+// VERIFICA SENHAS IGUAIS
+document.getElementById("formCadastro").addEventListener("submit", function(e) {
+    const s1 = document.getElementById("senha1").value;
+    const s2 = document.getElementById("senha2").value;
+
+    if (s1 !== s2) {
+        alert("As senhas não coincidem!");
+        e.preventDefault();
+    }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato • RedBlack</title>
+    <link rel="stylesheet" href="css/contato.css">
+    <link rel="stylesheet" href="css/style.css"> <!-- opcional -->
+
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">RED<span>BLACK</span></div>
+
+        <nav class="nav">
+            <a href="index.html">Início</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="carrinho.html">Carrinho</a>
+            <a href="login.html">Entrar</a>
+        </nav>
+    </header>
+
+    <div class="layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <h2 class="side-title">Navegação</h2>
+
+            <a class="side-link" href="index.html">🏠 Início</a>
+            <a class="side-link" href="produtos.html">🛒 Produtos</a>
+            <a class="side-link" href="carrinho.html">🧾 Carrinho</a>
+            <a class="side-link" href="login.html">🔐 Entrar</a>
+            <a class="side-link" href="sobre.html">ℹ Sobre</a>
+            <a class="side-link active" href="contato.html">✉ Contato</a>
+        </aside>
+
+        <!-- CONTATO -->
+        <main class="main-content">
+
+            <h1 class="page-title">Contato</h1>
+            <p class="page-subtitle">
+                Envie sua mensagem. Responderemos o mais rápido possível.
+            </p>
+
+            <div class="contato-box">
+
+               <form class="contato-form" action="php/salvar_contato.php" method="POST">
+                    <label>Nome</label>
+                     <input type="text" name="nome" required />
+
+                    <label>Email</label>
+                    <input type="email" name="email" required />
+
+                    <label>Mensagem</label>
+                    <textarea name="mensagem" rows="5" required></textarea>
+
+                      <button class="btn-contato" type="submit">Enviar Mensagem</button>
+                </form>
+
+
+            </div>
+
+            <div class="msg-sucesso" id="msgSucesso" style="display:none;">
+                Mensagem enviada com sucesso! ✔️
+            </div>
+
+            <script>
+                const url = new URLSearchParams(window.location.search);
+                if (url.get("sucesso") == "1") {
+                 document.getElementById("msgSucesso").style.display = "block";
+                }
+            </script>
+
+
+        </main>
+
+    </div>
+
+    <script>
+        // Mensagem simples
+        document.getElementById("contatoForm").addEventListener("submit", e => {
+            e.preventDefault();
+            alert("Mensagem enviada com sucesso!");
+            e.target.reset();
+        });
+    </script>
+
+</body>
+</html>

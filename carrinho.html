@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrinho • RedBlack</title>
+    <link rel="stylesheet" href="css/carrinho.css" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">RED<span>BLACK</span></div>
+
+        <nav class="nav">
+            <a href="index.html">Início</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="carrinho.html" class="active">Carrinho</a>
+            <a href="login.html">Entrar</a>
+        </nav>
+    </header>
+
+    <div class="layout">
+
+        <aside class="sidebar">
+            <h2 class="side-title">Navegação</h2>
+
+            <a class="side-link" href="index.html">🏠 Início</a>
+            <a class="side-link" href="produtos.html">🛒 Produtos</a>
+            <a class="side-link active" href="carrinho.html">🧾 Carrinho</a>
+            <a class="side-link" href="sobre.html">ℹ Sobre</a>
+            <a class="side-link" href="contato.html">✉ Contato</a>
+        </aside>
+
+        <main class="main-content">
+
+            <h1 class="page-title">Carrinho</h1>
+            <p class="page-subtitle">Revise seus produtos antes de finalizar a compra.</p>
+
+            <div class="carrinho-container">
+
+                <div id="carrinhoLista" class="carrinho-lista"></div>
+
+                <div class="carrinho-resumo">
+                    <h2>Resumo</h2>
+
+                    <div class="resumo-linha">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">R$ 0,00</span>
+                    </div>
+
+                    <div class="resumo-linha">
+                        <span>Frete:</span>
+                        <span id="frete">R$ 0,00</span>
+                    </div>
+
+                    <div class="resumo-total">
+                        <span>Total:</span>
+                        <span id="total">R$ 0,00</span>
+                    </div>
+
+                    <button class="finalizar-btn" id="btnFinalizar" onclick="enviarFinalizacao()">Finalizar Compra</button>
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+
+<script>
+function enviarFinalizacao() {
+    const usuario = localStorage.getItem("usuarioLogado");
+
+    if (!usuario) {
+        alert("Você precisa estar logado para finalizar a compra!");
+        window.location.href = "login.html";
+        return;
+    }
+
+    const cart = JSON.parse(localStorage.getItem("redblack_cart") || "[]");
+
+    if (cart.length === 0) {
+        alert("Seu carrinho está vazio!");
+        return;
+    }
+
+    const form = document.createElement("form");
+    form.method = "POST";
+    form.action = "php/finalizar_compra.php";
+
+    const inputCart = document.createElement("input");
+    inputCart.type = "hidden";
+    inputCart.name = "cart";
+    inputCart.value = JSON.stringify(cart);
+    form.appendChild(inputCart);
+
+    const u = JSON.parse(usuario);
+    const inputUser = document.createElement("input");
+    inputUser.type = "hidden";
+    inputUser.name = "id_usuario";
+    inputUser.value = u.id;
+    form.appendChild(inputUser);
+
+    document.body.appendChild(form);
+    form.submit();
+}
+</script>
+
+<script src="js/carrinho.js"></script>
+
+</body>
+</html>

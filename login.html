@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar • RedBlack</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">RED<span>BLACK</span></div>
+
+    <nav class="nav">
+        <a href="index.html">Início</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="carrinho.html">Carrinho</a>
+        <a href="login.html" class="active">Entrar</a>
+    </nav>
+</header>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <h2 class="side-title">Navegação</h2>
+
+        <a class="side-link" href="index.html">🏠 Início</a>
+        <a class="side-link" href="produtos.html">🛒 Produtos</a>
+        <a class="side-link" href="carrinho.html">🧾 Carrinho</a>
+        <a class="side-link active" href="login.html">🔐 Entrar</a>
+        <a class="side-link" href="sobre.html">ℹ Sobre</a>
+        <a class="side-link" href="contato.html">✉ Contato</a>
+    </aside>
+
+    <main class="main-content">
+
+        <h1 class="page-title">Entrar</h1>
+        <p class="page-subtitle">Acesse sua conta RedBlack.</p>
+
+        <!-- MENSAGENS DE ERRO/SUCESSO -->
+        <div id="msgErro" class="alerta" style="display:none;">
+            Email ou senha incorretos!
+        </div>
+
+        <div id="msgLogout" class="sucesso" style="display:none;">
+            Sessão finalizada com sucesso.
+        </div>
+
+        <div class="login-box">
+
+            <form class="login-form" action="php/auth_login.php" method="POST">
+
+                <label>Email</label>
+                <input type="email" name="email" placeholder="seuemail@gmail.com" required>
+
+                <label>Senha</label>
+                <input type="password" name="senha" placeholder="••••••••" required>
+
+                <button class="login-btn" type="submit">Entrar</button>
+
+                <p class="login-alt">
+                    Não tem conta?
+                    <a href="cadastro.html">Criar conta</a>
+                </p>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script>
+const p = new URLSearchParams(location.search);
+
+if (p.get("erro") === "1") {
+    document.getElementById("msgErro").style.display = "block";
+}
+
+if (p.get("logout") === "1") {
+    document.getElementById("msgLogout").style.display = "block";
+}
+</script>
+
+</body>
+</html>

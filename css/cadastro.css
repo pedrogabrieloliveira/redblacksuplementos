@@ -1,0 +1,105 @@
+/*CADASTRO */
+
+.main-content {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Títulos */
+.page-title {
+    margin-bottom: 10px;
+}
+
+.page-subtitle {
+    margin-bottom: 35px;
+    color: #aaa;
+}
+
+/* CAIXA CENTRAL */
+.cadastro-box {
+    background: #111;
+    padding: 45px;
+    border-radius: 16px;
+    border: 1px solid #1f1f1f;
+    width: 100%;
+    max-width: 520px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+}
+
+/* LABELS */
+.cadastro-box label {
+    display: block;
+    font-size: 15px;
+    color: #ddd;
+    margin-bottom: 6px;
+}
+
+/* CAMPOS */
+.cadastro-box input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 22px;
+    background: #0c0c0c;
+    border: 1px solid #222;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 15px;
+}
+
+.cadastro-box input:focus {
+    border-color: #e60000;
+    outline: none;
+}
+
+/* BOTÃO */
+.cadastro-btn {
+    width: 100%;
+    padding: 15px;
+    background: #e60000;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.cadastro-btn:hover {
+    background: #ff1a1a;
+}
+
+/* LINK FINAL */
+.cadastro-alt {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.cadastro-alt a {
+    color: #e60000;
+}
+
+.alerta, .sucesso {
+    width: 100%;
+    max-width: 520px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.alerta {
+    background: #3d0000;
+    color: #ffb3b3;
+    border: 1px solid #e60000;
+}
+
+.sucesso {
+    background: #003d00;
+    color: #b3ffb3;
+    border: 1px solid #00c400;
+}

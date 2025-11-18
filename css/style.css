@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background: #0d0d0d;
+    color: #e6e6e6;
+    line-height: 1.6;
+}
+
+/* ------------------ HEADER ------------------ */
+.header {
+    background: #111;
+    border-bottom: 1px solid #1d1d1d;
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+}
+.logo span {
+    color: #e60000;
+}
+
+.nav a {
+    margin-left: 24px;
+    color: #b5b5b5;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.2s;
+}
+.nav a:hover,
+.nav .active {
+    color: #fff;
+}
+
+/* ------------------ LAYOUT ------------------ */
+.layout {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    min-height: calc(100vh - 60px);
+}
+
+/* ------------------ SIDEBAR ------------------ */
+.sidebar {
+    background: #111;
+    border-right: 1px solid #1d1d1d;
+    height: 100%;
+    padding: 28px 20px;
+    position: sticky;
+    top: 60px;
+}
+
+.side-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.side-link {
+    display: block;
+    padding: 10px 6px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #bdbdbd;
+    border-radius: 6px;
+    transition: .25s;
+}
+.side-link:hover {
+    background: #1a1a1a;
+    color: #fff;
+}
+.side-link.active {
+    background: #1a1a1a;
+    border-left: 3px solid #e60000;
+    color: #fff;
+}
+
+.side-input {
+    width: 100%;
+    padding: 10px;
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 6px;
+    color: #eee;
+    margin-bottom: 10px;
+    transition: .2s;
+}
+.side-input:focus {
+    border-color: #e60000;
+}
+
+/* ------------------ MAIN ------------------ */
+.main-content {
+    padding: 40px;
+}
+
+.page-title {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.page-subtitle {
+    margin-top: 6px;
+    color: #b5b5b5;
+}
+
+/* ------------------ CATEGORIAS INDEX ------------------ */
+.categorias-grid {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 18px;
+}
+
+.categoria-card {
+    background: #111;
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #1c1c1c;
+    text-align: center;
+    color: #dcdcdc;
+    text-decoration: none;
+    font-size: 14px;
+    transition: .25s;
+}
+.categoria-card:hover {
+    border-color: #e60000;
+    color: #fff;
+}
+
+/* ===================================================== */
+/* BANNER DARK PREMIUM COM GLOW VERMELHO NO HOVER        */
+/* ===================================================== */
+
+.banner-central {
+    width: 100%;
+    margin: 55px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.banner-central img {
+    width: 100%;
+    max-width: 1350px;
+    height: 380px;
+    border-radius: 14px;
+    object-fit: cover;
+    transition: .35s ease;
+    border: 1px solid #1a1a1a;
+    box-shadow: 0 0 0 rgba(255,0,0,0); /* início sem glow */
+}
+
+/* HOVER COM LUZ VERMELHA AO REDOR */
+.banner-central img:hover {
+    transform: scale(1.02);
+    box-shadow: 
+        0 0 22px rgba(255,0,0,0.45),
+        0 0 48px rgba(255,0,0,0.20);
+    border-color: #e60000;
+}
+
+
+/* ------------------ ANIMAÇÃO ------------------ */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ------------------ RESPONSIVO ------------------ */
+@media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; }
+    .sidebar { display: none; }
+}

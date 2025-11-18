@@ -1,0 +1,80 @@
+/*CONTATO */
+
+.main-content {
+    padding: 40px;
+}
+
+/* Título */
+.page-title {
+    margin-bottom: 10px;
+}
+
+.page-subtitle {
+    margin-bottom: 35px;
+    color: #999;
+}
+
+/* CAIXA PRINCIPAL */
+.contato-box {
+    background: #111;
+    border: 1px solid #1d1d1d;
+    border-radius: 14px;
+    padding: 40px;                /* mais espaçamento */
+    max-width: 550px;             /* mais larga */
+    line-height: 1.6;
+}
+
+/* FORM */
+.contato-form label {
+    font-size: 15px;
+    margin-bottom: 6px;
+    display: block;
+    color: #ddd;
+}
+
+.contato-form input,
+.contato-form textarea {
+    width: 100%;
+    padding: 14px;
+    margin-top: 6px;
+    margin-bottom: 22px;          /* mais espaço entre campos */
+    background: #0d0d0d;
+    border: 1px solid #222;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 15px;
+}
+
+.contato-form textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+
+/* BOTÃO */
+.contato-btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(90deg, #e60000, #b30000);
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 14px rgba(230, 0, 0, 0.35);
+    transition: 0.25s ease;
+}
+
+.contato-btn:hover {
+    background: linear-gradient(90deg, #ff1a1a, #cc0000);
+    box-shadow: 0 6px 18px rgba(255, 0, 0, 0.45);
+    transform: translateY(-2px);
+}
+
+.contato-btn:active {
+    transform: translateY(0px);
+    box-shadow: 0 3px 10px rgba(255, 0, 0, 0.3);
+}

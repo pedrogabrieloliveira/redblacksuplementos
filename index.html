@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedBlack • Início</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">RED<span>BLACK</span></div>
+
+        <nav class="nav">
+            <a href="index.html" class="active">Início</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="carrinho.html">Carrinho</a>
+            <a href="login.html">Entrar</a>
+        </nav>
+    </header>
+
+    <div class="layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <h2 class="side-title">Navegação</h2>
+
+            <a class="side-link active" href="index.html">🏠 Início</a>
+            <a class="side-link" href="produtos.html">🛒 Produtos</a>
+            <a class="side-link" href="carrinho.html">🧾 Carrinho</a>
+            <a class="side-link" href="sobre.html">ℹ Sobre</a>
+            <a class="side-link" href="contato.html">✉ Contato</a>
+        </aside>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main class="main-content">
+
+            <h1 class="page-title">Destaques RedBlack</h1>
+            <p class="page-subtitle">Os produtos mais procurados pelos nossos clientes.</p>
+
+            <div class="banner-central">
+                <img src="https://img.cdndsgni.com/preview/13151829.jpg" alt="Banner RedBlack">
+            </div>
+
+            <!-- GRADE DESTACADA -->
+            <div class="produtos-grid" id="destaques">
+                <!-- Itens gerados via JS (puxando do produtos.js) -->
+            </div>
+
+            <h2 class="page-title" style="margin-top:40px;">Categorias</h2>
+            <p class="page-subtitle">Escolha o tipo de suplemento que você procura.</p>
+
+            <!-- CATEGORIAS -->
+            <div class="categorias-grid">
+                <a class="categoria-card" href="produtos.html?cat=whey">Whey Protein</a>
+                <a class="categoria-card" href="produtos.html?cat=creatina">Creatina</a>
+                <a class="categoria-card" href="produtos.html?cat=pretreino">Pré-treino</a>
+                <a class="categoria-card" href="produtos.html?cat=bcaa">BCAA</a>
+                <a class="categoria-card" href="produtos.html?cat=glutamina">Glutamina</a>
+                <a class="categoria-card" href="produtos.html?cat=termogenicos">Termogênicos</a>
+                <a class="categoria-card" href="produtos.html?cat=multi">Multivitamínicos</a>
+                <a class="categoria-card" href="produtos.html?cat=snacks">Snacks</a>
+                <a class="categoria-card" href="produtos.html?cat=omega3">Ômega 3</a>
+                <a class="categoria-card" href="produtos.html?cat=hipercaloricos">Hipercalóricos</a>
+                <a class="categoria-card" href="produtos.html?cat=veganos">Veganos</a>
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="js/produtos.js"></script>
+    <script src="js/destaques.js"></script>
+
+</body>
+</html>

@@ -1,12 +1,12 @@
 # 🛒 RedBlack – E-Commerce de Suplementos
 
-Bem-vindo ao **RedBlack**, um e-commerce moderno desenvolvido como projeto acadêmico, com foco em **suplementação esportiva**, design dark premium e funcionalidades completas de compra.
+Bem-vindo ao **RedBlack**, um e-commerce moderno desenvolvido como **projeto integrador do curso técnico em Informática pelo SENAC**, com foco em **suplementação esportiva**, design dark premium e funcionalidades completas de compra.
 
 Este projeto foi construído com **HTML, CSS, JavaScript e PHP**, integrado ao **MySQL (XAMPP)**, incluindo carrinho, login, pedidos, filtros e muito mais.
 
 ---
 
-## 🎨 Layout e Identidade
+# 🎨 Layout e Identidade
 
 O site segue a identidade visual:
 
@@ -16,7 +16,7 @@ O site segue a identidade visual:
 
 ---
 
-## 🚀 Funcionalidades Principais
+# 🚀 Funcionalidades Principais
 
 ✔ **Cadastro e Login de Usuário** (com hash de senha)  
 ✔ **Sessão e LocalStorage sincronizados**  
@@ -29,4 +29,3 @@ O site segue a identidade visual:
 ✔ **Design responsivo em todas as telas**  
 
 ---
-
